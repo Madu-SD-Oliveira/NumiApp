@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.NumiApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/bluey</item>
+        <item name="colorOnPrimary">@color/red</item>
+        <item name="colorSecondary">@color/gray</item>
+        <item name="colorOnSecondary">@color/offWhite</item>
+        <item name="colorOnBackground">@color/black</item>
+    </style>
+</resources>

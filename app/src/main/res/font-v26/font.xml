@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <font
+        android:font="@font/chillax_bold"/>
+    <font
+        android:font="@font/chillax_semibold"/>
+    <font
+        android:font="@font/chillax_medium"/>
+    <font
+        android:font="@font/chillax_regular"/>
+    <font
+        android:font="@font/chillax_light"/>
+    <font
+        android:font="@font/chillax_extralight"/>
+
+
+</font-family>

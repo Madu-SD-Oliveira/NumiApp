@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">NumiApp</string>
+    <string name="appName">Numi.</string>
+    <string name="slogan">Tu calculadora minimalista...</string>
+    <string name="btnStart">Empieza</string>
+</resources>

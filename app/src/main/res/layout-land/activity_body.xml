@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_gradient"
+    android:id="@+id/main"
     tools:context=".BodyActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -71,29 +72,49 @@
         app:layout_constraintStart_toEndOf="@id/displayLayout"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-        <Button android:id="@+id/btnCleanAll" style="@style/CalcButtonLandscape" android:text="CA" android:backgroundTint="@color/red" android:alpha="0.8" android:onClick="clean"/>
-        <Button android:id="@+id/btnClean" style="@style/CalcButtonLandscape" android:text="C" android:backgroundTint="@color/red" android:alpha="0.5" android:onClick="clean"/>
-        <Button android:id="@+id/btnPercent" style="@style/CalcButtonLandscape" android:text="%" android:backgroundTint="@color/grayFull" android:onClick="changeOperator"/>
-        <Button android:id="@+id/btnDivide" style="@style/CalcButtonLandscape" android:text="÷" android:backgroundTint="@color/grayFull" android:onClick="changeOperator"/>
+        <Button android:id="@+id/btnCleanAll" style="@style/CalcButtonLandscape" android:text="CA"
+            android:backgroundTint="@color/red" android:alpha="0.8" android:onClick="clean" android:textColor="@color/black" />
+        <Button android:id="@+id/btnClean" style="@style/CalcButtonLandscape" android:text="C"
+            android:backgroundTint="@color/red" android:alpha="0.5" android:onClick="clean" android:textColor="@color/black" />
+        <Button android:id="@+id/btnPercent" style="@style/CalcButtonLandscape" android:text="%"
+            android:backgroundTint="@color/grayFull" android:onClick="changeOperator" android:textColor="@color/black" />
+        <Button android:id="@+id/btnDivide" style="@style/CalcButtonLandscape" android:text="÷"
+            android:backgroundTint="@color/grayFull" android:onClick="changeOperator" android:textColor="@color/black" />
 
-        <Button android:id="@+id/btnSeven" style="@style/CalcButtonLandscape" android:text="7" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
-        <Button android:id="@+id/btnEight" style="@style/CalcButtonLandscape" android:text="8" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
-        <Button android:id="@+id/btnNine" style="@style/CalcButtonLandscape" android:text="9" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
-        <Button android:id="@+id/btnPlus" style="@style/CalcButtonLandscape" android:text="+" android:backgroundTint="@color/grayFull" android:onClick="changeOperator"/>
+        <Button android:id="@+id/btnSeven" style="@style/CalcButtonLandscape" android:text="7" android:backgroundTint="@color/btn_gray_selector"
+            android:onClick="selectNumber" android:textColor="@color/offWhite"/>
+        <Button android:id="@+id/btnEight" style="@style/CalcButtonLandscape" android:text="8" android:backgroundTint="@color/btn_gray_selector"
+            android:onClick="selectNumber" android:textColor="@color/offWhite"/>
+        <Button android:id="@+id/btnNine" style="@style/CalcButtonLandscape" android:text="9" android:backgroundTint="@color/btn_gray_selector"
+            android:onClick="selectNumber" android:textColor="@color/offWhite"/>
+        <Button android:id="@+id/btnPlus" style="@style/CalcButtonLandscape" android:text="+" android:backgroundTint="@color/grayFull"
+            android:onClick="changeOperator" android:textColor="@color/black" />
 
-        <Button android:id="@+id/btnFour" style="@style/CalcButtonLandscape" android:text="4" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
-        <Button android:id="@+id/btnFive" style="@style/CalcButtonLandscape" android:text="5" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
-        <Button android:id="@+id/btnSix" style="@style/CalcButtonLandscape" android:text="6" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
-        <Button android:id="@+id/btnMinus" style="@style/CalcButtonLandscape" android:text="-" android:backgroundTint="@color/grayFull" android:onClick="changeOperator"/>
+        <Button android:id="@+id/btnFour" style="@style/CalcButtonLandscape" android:text="4" android:backgroundTint="@color/btn_gray_selector"
+            android:onClick="selectNumber" android:textColor="@color/offWhite"/>
+        <Button android:id="@+id/btnFive" style="@style/CalcButtonLandscape" android:text="5" android:backgroundTint="@color/btn_gray_selector"
+            android:onClick="selectNumber" android:textColor="@color/offWhite"/>
+        <Button android:id="@+id/btnSix" style="@style/CalcButtonLandscape" android:text="6" android:backgroundTint="@color/btn_gray_selector"
+            android:onClick="selectNumber" android:textColor="@color/offWhite"/>
+        <Button android:id="@+id/btnMinus" style="@style/CalcButtonLandscape" android:text="-" android:backgroundTint="@color/grayFull"
+            android:onClick="changeOperator" android:textColor="@color/black" />
 
-        <Button android:id="@+id/btnOne" style="@style/CalcButtonLandscape" android:text="1" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
-        <Button android:id="@+id/btnTwo" style="@style/CalcButtonLandscape" android:text="2" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
-        <Button android:id="@+id/btnThree" style="@style/CalcButtonLandscape" android:text="3" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
-        <Button android:id="@+id/btnTimes" style="@style/CalcButtonLandscape" android:text="×" android:backgroundTint="@color/grayFull" android:onClick="changeOperator"/>
+        <Button android:id="@+id/btnOne" style="@style/CalcButtonLandscape" android:text="1" android:backgroundTint="@color/btn_gray_selector"
+            android:onClick="selectNumber" android:textColor="@color/offWhite"/>
+        <Button android:id="@+id/btnTwo" style="@style/CalcButtonLandscape" android:text="2" android:backgroundTint="@color/btn_gray_selector"
+            android:onClick="selectNumber" android:textColor="@color/offWhite"/>
+        <Button android:id="@+id/btnThree" style="@style/CalcButtonLandscape" android:text="3" android:backgroundTint="@color/btn_gray_selector"
+            android:onClick="selectNumber" android:textColor="@color/offWhite"/>
+        <Button android:id="@+id/btnTimes" style="@style/CalcButtonLandscape" android:text="×" android:backgroundTint="@color/grayFull"
+            android:onClick="changeOperator" android:textColor="@color/black" />
 
-        <Button android:id="@+id/btnDot" style="@style/CalcButtonLandscape" android:text="." android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
-        <Button android:id="@+id/btnZero" style="@style/CalcButtonLandscape" android:text="0" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
-        <Button android:id="@+id/btnEqual" style="@style/CalcButtonLandscape" android:layout_columnSpan="2" android:layout_columnWeight="2" android:text="=" android:backgroundTint="@color/red" android:alpha="0.5" android:onClick="equal"/>
+        <Button android:id="@+id/btnDot" style="@style/CalcButtonLandscape" android:text="." android:backgroundTint="@color/btn_gray_selector"
+            android:onClick="selectNumber" android:textColor="@color/offWhite"/>
+        <Button android:id="@+id/btnZero" style="@style/CalcButtonLandscape" android:text="0" android:backgroundTint="@color/btn_gray_selector"
+            android:onClick="selectNumber" android:textColor="@color/offWhite"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEqual" style="@style/CalcButtonLandscape" android:layout_columnSpan="2" android:layout_columnWeight="2" app:backgroundTint="@null"
+            android:text="=" android:background="@drawable/btn_background" android:alpha="0.5" android:onClick="equal" android:textColor="@color/black" />
 
     </GridLayout>
 

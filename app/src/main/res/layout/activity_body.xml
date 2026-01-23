@@ -74,14 +74,21 @@
         app:layout_constraintTop_toBottomOf="@id/displayLayout"
         app:layout_constraintVertical_weight="2">
 
-        <Button android:id="@+id/btnCleanAll" style="@style/CalcButtonPortrait" android:onClick="clean" android:text="CA" android:backgroundTint="@color/red" android:alpha="0.8" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
-        <Button android:id="@+id/btnClean" style="@style/CalcButtonPortrait" android:onClick="clean" android:text="C" android:backgroundTint="@color/red" android:alpha="0.5" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
-        <Button android:id="@+id/btnPercent" style="@style/CalcButtonPortrait" android:onClick="changeOperator" android:text="%" android:backgroundTint="@color/grayFull" android:alpha="0.8" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
-        <Button android:id="@+id/btnDivide" style="@style/CalcButtonPortrait" android:onClick="changeOperator" android:text="÷" android:backgroundTint="@color/grayFull" android:alpha="0.8" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
+        <Button android:id="@+id/btnCleanAll" style="@style/CalcButtonPortrait" android:onClick="clean" android:text="CA" android:backgroundTint="@color/red"
+            android:alpha="0.8" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
+        <Button android:id="@+id/btnClean" style="@style/CalcButtonPortrait" android:onClick="clean" android:text="C" android:backgroundTint="@color/red"
+            android:alpha="0.5" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
+        <Button android:id="@+id/btnPercent" style="@style/CalcButtonPortrait" android:onClick="changeOperator" android:text="%" android:backgroundTint="@color/grayFull"
+            android:alpha="0.8" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
+        <Button android:id="@+id/btnDivide" style="@style/CalcButtonPortrait" android:onClick="changeOperator" android:text="÷" android:backgroundTint="@color/grayFull"
+            android:alpha="0.8" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
 
-        <Button android:id="@+id/btnSeven" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="7" android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
-        <Button android:id="@+id/btnEight" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="8" android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
-        <Button android:id="@+id/btnNine" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="9" android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
+        <Button android:id="@+id/btnSeven" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="7" android:backgroundTint="@color/btn_gray_selector"
+            android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
+        <Button android:id="@+id/btnEight" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="8" android:backgroundTint="@color/btn_gray_selector"
+            android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
+        <Button android:id="@+id/btnNine" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="9" android:backgroundTint="@color/btn_gray_selector"
+            android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
         <Button android:id="@+id/btnPlus" style="@style/CalcButtonPortrait" android:onClick="changeOperator" android:text="+" android:backgroundTint="@color/grayFull" android:alpha="0.8" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
 
         <Button android:id="@+id/btnFour" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="4" android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />

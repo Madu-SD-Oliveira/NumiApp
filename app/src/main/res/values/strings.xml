@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">NumiApp</string>
-    <string name="appName">Numi.</string>
-    <string name="slogan">Tu calculadora minimalista...</string>
-    <string name="btnStart">Empieza</string>
+    <string name="app_name" translatable="false">NumiApp</string>
+    <string name="appName" translatable="false">Numi.</string>
+    <string name="slogan">Your minimalist calculator...</string>
+    <string name="btnStart">Start!</string>
+    <string name="error_divide_by_zero">Cannot divide by zero</string>
+    <string name="toast_invalid_input">Invalid input!</string>
+    <string name="error_value_too_large">Value too large</string>
 </resources>

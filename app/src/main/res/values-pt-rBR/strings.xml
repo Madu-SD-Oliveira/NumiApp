@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="slogan">Sua calculadora minimalista...</string>
+    <string name="btnStart">Comece!</string>
+    <string name="error_divide_by_zero">Divisão por zero</string>
+    <string name="toast_invalid_input">Entrada inválida!</string>
+    <string name="error_value_too_large">Valor muito grande</string>
+</resources>

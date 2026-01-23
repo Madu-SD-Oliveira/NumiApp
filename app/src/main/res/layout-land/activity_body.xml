@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    tools:context=".BodyActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/transparency"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/displayLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="end|center_vertical"
+        android:orientation="vertical"
+        android:padding="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonsGrid"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <TextView
+            android:id="@+id/tvHistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:fontFamily="@font/chillax_light"
+            android:gravity="end|center_horizontal"
+            android:lines="2"
+            android:text="150 + 50"
+            android:textColor="@color/grayFull"
+            app:autoSizeMaxTextSize="24sp"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeTextType="uniform" />
+
+        <TextView
+            android:id="@+id/tvCurrent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:fontFamily="@font/chillax_light"
+            android:gravity="end|center_horizontal"
+            android:lines="3"
+            android:layout_marginTop="8dp"
+            android:text="200"
+            android:textColor="@color/offWhite"
+            app:autoSizeMaxTextSize="64sp"
+            app:autoSizeMinTextSize="24sp"
+            app:autoSizeTextType="uniform" />
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/buttonsGrid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:columnCount="4"
+        android:padding="8dp"
+        android:rowCount="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1.3"
+        app:layout_constraintStart_toEndOf="@id/displayLayout"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <Button android:id="@+id/btnCleanAll" style="@style/CalcButtonLandscape" android:text="CA" android:backgroundTint="@color/red" android:alpha="0.8" android:onClick="clean"/>
+        <Button android:id="@+id/btnClean" style="@style/CalcButtonLandscape" android:text="C" android:backgroundTint="@color/red" android:alpha="0.5" android:onClick="clean"/>
+        <Button android:id="@+id/btnPercent" style="@style/CalcButtonLandscape" android:text="%" android:backgroundTint="@color/grayFull" android:onClick="changeOperator"/>
+        <Button android:id="@+id/btnDivide" style="@style/CalcButtonLandscape" android:text="÷" android:backgroundTint="@color/grayFull" android:onClick="changeOperator"/>
+
+        <Button android:id="@+id/btnSeven" style="@style/CalcButtonLandscape" android:text="7" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
+        <Button android:id="@+id/btnEight" style="@style/CalcButtonLandscape" android:text="8" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
+        <Button android:id="@+id/btnNine" style="@style/CalcButtonLandscape" android:text="9" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
+        <Button android:id="@+id/btnPlus" style="@style/CalcButtonLandscape" android:text="+" android:backgroundTint="@color/grayFull" android:onClick="changeOperator"/>
+
+        <Button android:id="@+id/btnFour" style="@style/CalcButtonLandscape" android:text="4" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
+        <Button android:id="@+id/btnFive" style="@style/CalcButtonLandscape" android:text="5" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
+        <Button android:id="@+id/btnSix" style="@style/CalcButtonLandscape" android:text="6" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
+        <Button android:id="@+id/btnMinus" style="@style/CalcButtonLandscape" android:text="-" android:backgroundTint="@color/grayFull" android:onClick="changeOperator"/>
+
+        <Button android:id="@+id/btnOne" style="@style/CalcButtonLandscape" android:text="1" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
+        <Button android:id="@+id/btnTwo" style="@style/CalcButtonLandscape" android:text="2" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
+        <Button android:id="@+id/btnThree" style="@style/CalcButtonLandscape" android:text="3" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
+        <Button android:id="@+id/btnTimes" style="@style/CalcButtonLandscape" android:text="×" android:backgroundTint="@color/grayFull" android:onClick="changeOperator"/>
+
+        <Button android:id="@+id/btnDot" style="@style/CalcButtonLandscape" android:text="." android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
+        <Button android:id="@+id/btnZero" style="@style/CalcButtonLandscape" android:text="0" android:backgroundTint="@color/btn_gray_selector" android:onClick="selectNumber"/>
+        <Button android:id="@+id/btnEqual" style="@style/CalcButtonLandscape" android:layout_columnSpan="2" android:layout_columnWeight="2" android:text="=" android:backgroundTint="@color/red" android:alpha="0.5" android:onClick="equal"/>
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

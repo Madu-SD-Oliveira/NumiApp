@@ -6,14 +6,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@drawable/bg_gradient"
     tools:context=".BodyActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/gray"
+        android:background="@color/transparency"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,33 +23,42 @@
     <LinearLayout
         android:id="@+id/displayLayout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:orientation="vertical"
         android:padding="24dp"
         android:gravity="end|bottom"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/buttonsGrid">
+        app:layout_constraintBottom_toTopOf="@+id/buttonsGrid"
+        app:layout_constraintVertical_weight="1">
 
-        <TextView
+            <TextView
             android:id="@+id/tvHistory"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="150 + 50"
-            android:textColor="@color/grayFull"
-            android:textSize="24sp"
-            android:fontFamily="@font/chillax_light" />
-
-        <TextView
-            android:id="@+id/tvCurrent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="200"
-            android:textColor="@color/offWhite"
-            android:textSize="48sp"
             android:fontFamily="@font/chillax_light"
-            android:layout_marginTop="8dp" />
+            android:gravity="end"
+            android:text="150 + 50"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="12sp"
+            app:autoSizeMaxTextSize="24sp"
+            android:lines="2"/>
+
+            <TextView
+            android:id="@+id/tvCurrent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/chillax_light"
+            android:gravity="end"
+            android:text="200"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="24sp"
+            app:autoSizeMaxTextSize="64sp"
+            android:lines="3" />
+
     </LinearLayout>
 
     <GridLayout
@@ -59,312 +68,37 @@
         android:columnCount="4"
         android:padding="8dp"
         android:rowCount="5"
-        app:layout_constraintHeight_percent="0.5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/displayLayout">
+        app:layout_constraintTop_toBottomOf="@id/displayLayout"
+        app:layout_constraintVertical_weight="2">
 
-        <Button
-            android:id="@+id/btnCleanAll"
-            android:onClick="clean"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/red"
-            android:alpha="0.8"
-            android:text="CA"
-            android:fontFamily="@font/chillax_regular"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:cornerRadius="360dp" />
+        <Button android:id="@+id/btnCleanAll" style="@style/CalcButtonPortrait" android:onClick="clean" android:text="CA" android:backgroundTint="@color/red" android:alpha="0.8" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
+        <Button android:id="@+id/btnClean" style="@style/CalcButtonPortrait" android:onClick="clean" android:text="C" android:backgroundTint="@color/red" android:alpha="0.5" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
+        <Button android:id="@+id/btnPercent" style="@style/CalcButtonPortrait" android:onClick="changeOperator" android:text="%" android:backgroundTint="@color/grayFull" android:alpha="0.8" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
+        <Button android:id="@+id/btnDivide" style="@style/CalcButtonPortrait" android:onClick="changeOperator" android:text="÷" android:backgroundTint="@color/grayFull" android:alpha="0.8" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
 
-        <Button
-            android:id="@+id/btnClean"
-            android:onClick="clean"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/red"
-            android:alpha="0.5"
-            android:text="C"
-            android:fontFamily="@font/chillax_regular"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:cornerRadius="360dp" />
+        <Button android:id="@+id/btnSeven" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="7" android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
+        <Button android:id="@+id/btnEight" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="8" android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
+        <Button android:id="@+id/btnNine" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="9" android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
+        <Button android:id="@+id/btnPlus" style="@style/CalcButtonPortrait" android:onClick="changeOperator" android:text="+" android:backgroundTint="@color/grayFull" android:alpha="0.8" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
 
-        <Button
-            android:id="@+id/btnPercent"
-            android:onClick="changeOperator"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/grayFull"
-            android:alpha="0.8"
-            android:text="%"
-            android:fontFamily="@font/chillax_regular"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:cornerRadius="360dp" />
+        <Button android:id="@+id/btnFour" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="4" android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
+        <Button android:id="@+id/btnFive" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="5" android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
+        <Button android:id="@+id/btnSix" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="6" android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
+        <Button android:id="@+id/btnMinus" style="@style/CalcButtonPortrait" android:onClick="changeOperator" android:text="-" android:backgroundTint="@color/grayFull" android:alpha="0.8" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
 
-        <Button
-            android:id="@+id/btnDivide"
-            android:onClick="changeOperator"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/grayFull"
-            android:alpha="0.8"
-            android:text="÷"
-            android:fontFamily="@font/chillax_regular"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
+        <Button android:id="@+id/btnOne" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="1" android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
+        <Button android:id="@+id/btnTwo" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="2" android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
+        <Button android:id="@+id/btnThree" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="3" android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
+        <Button android:id="@+id/btnTimes" style="@style/CalcButtonPortrait" android:onClick="changeOperator" android:text="×" android:backgroundTint="@color/grayFull" android:alpha="0.8" android:fontFamily="@font/chillax_regular" android:textColor="@color/black" />
 
-        <Button
-            android:id="@+id/btnSeven"
-            android:onClick="selectNumber"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/btn_gray_selector"
-            android:text="7"
-            android:textColor="@color/offWhite"
-            android:fontFamily="@font/chillax_light"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
-
-        <Button
-            android:id="@+id/btnEight"
-            android:onClick="selectNumber"
-            android:fontFamily="@font/chillax_light"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/btn_gray_selector"
-            android:text="8"
-            android:textColor="@color/offWhite"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
-
-        <Button
-            android:id="@+id/btnNine"
-            android:onClick="selectNumber"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/btn_gray_selector"
-            android:text="9"
-            android:textColor="@color/offWhite"
-            android:fontFamily="@font/chillax_light"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
-
-
-
-
-        <Button
-            android:id="@+id/btnPlus"
-            android:onClick="changeOperator"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/grayFull"
-            android:fontFamily="@font/chillax_regular"
-            android:text="+"
-            android:textColor="@color/black"
-            android:alpha="0.8"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
-
-
-        <Button
-            android:id="@+id/btnFour"
-            android:onClick="selectNumber"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/btn_gray_selector"
-            android:text="4"
-            android:textColor="@color/offWhite"
-            android:fontFamily="@font/chillax_light"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
-
-        <Button
-            android:id="@+id/btnFive"
-            android:onClick="selectNumber"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/btn_gray_selector"
-            android:text="5"
-            android:textColor="@color/offWhite"
-            android:fontFamily="@font/chillax_light"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
-
-        <Button
-            android:id="@+id/btnSix"
-            android:onClick="selectNumber"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/btn_gray_selector"
-            android:text="6"
-            android:textColor="@color/offWhite"
-            android:fontFamily="@font/chillax_light"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
-
-
-        <Button
-            android:id="@+id/btnMinus"
-            android:onClick="changeOperator"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/grayFull"
-            android:alpha="0.8"
-            android:fontFamily="@font/chillax_regular"
-            android:text="-"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
-
-        <Button
-            android:id="@+id/btnOne"
-            android:onClick="selectNumber"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/btn_gray_selector"
-            android:text="1"
-            android:textColor="@color/offWhite"
-            android:fontFamily="@font/chillax_light"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
-
-        <Button
-            android:id="@+id/btnTwo"
-            android:onClick="selectNumber"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/btn_gray_selector"
-            android:text="2"
-            android:textColor="@color/offWhite"
-            android:fontFamily="@font/chillax_light"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
-
-        <Button
-            android:id="@+id/btnThree"
-            android:onClick="selectNumber"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/btn_gray_selector"
-            android:text="3"
-            android:textColor="@color/offWhite"
-            android:fontFamily="@font/chillax_light"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
-
-        <Button
-            android:id="@+id/btnTimes"
-            android:onClick="changeOperator"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/grayFull"
-            android:alpha="0.8"
-            android:text="×"
-            android:fontFamily="@font/chillax_regular"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
-
-        <Button
-            android:id="@+id/btnDot"
-            android:onClick="selectNumber"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/btn_gray_selector"
-            android:text="."
-            android:textColor="@color/offWhite"
-            android:fontFamily="@font/chillax_light"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
-
-        <Button
-            android:id="@+id/btnZero"
-            android:onClick="selectNumber"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="1"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/btn_gray_selector"
-            android:text="0"
-            android:textColor="@color/offWhite"
-            android:fontFamily="@font/chillax_light"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
-
-        <Button
-            android:id="@+id/btnEqual"
-            android:onClick="equal"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_rowWeight="1"
-            android:layout_columnWeight="2"
-            android:layout_columnSpan="2"
-            android:layout_gravity="fill"
-            android:layout_margin="4dp"
-            android:backgroundTint="@color/bluey"
-            android:text="="
-            android:alpha="0.5"
-            android:textColor="@color/black"
-            android:fontFamily="@font/chillax_medium"
-            android:textSize="24sp"
-            app:cornerRadius="360dp" />
+        <Button android:id="@+id/btnDot" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="." android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
+        <Button android:id="@+id/btnZero" style="@style/CalcButtonPortrait" android:onClick="selectNumber" android:text="0" android:backgroundTint="@color/btn_gray_selector" android:textColor="@color/offWhite" android:fontFamily="@font/chillax_light" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEqual" style="@style/CalcButtonPortrait" android:onClick="equal" android:text="=" android:layout_columnSpan="2" android:layout_columnWeight="2" app:backgroundTint="@null"
+            android:background= "@drawable/btn_background" android:alpha="0.5" android:fontFamily="@font/chillax_medium" android:textColor="@color/black" app:layout_constraintDimensionRatio="" />
 
     </GridLayout>
 

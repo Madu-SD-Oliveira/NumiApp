@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="appName">Numi</string>
+    <string name="appName" translatable="false">Numi</string>
+    <string name="division_by_zero">Division by zero!</string>
 </resources>
